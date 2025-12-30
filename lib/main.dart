@@ -42,6 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           IconButton(onPressed: (){
             print("Notfication pressed");
+            print("yamini");
           }, icon: const Icon(Icons.notifications_active,
           color: Colors.red,))
         ],
