@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'form1.dart';
+import 'login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,49 +9,19 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Login App',
       theme: ThemeData(
-
-        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.indigo,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const Login(),
+        '/form1':(context) => const Form1(),
+      },
     );
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return(
-    Scaffold(
-      appBar: AppBar(
-        title: Text("YAMINI"),
-        centerTitle: true,
-        backgroundColor: Colors.deepPurpleAccent,
-        actions: [
-          IconButton(onPressed: (){
-            print("Notfication pressed");
-            print("yamini");
-          }, icon: const Icon(Icons.notifications_active,
-          color: Colors.red,))
-        ],
-      ),
-      body:Column()
-    )
-    );
-  }
-
 }
